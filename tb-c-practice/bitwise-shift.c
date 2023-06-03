@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINNGS
+
 #include <stdio.h>
 #include <string.h> // strlen()
 #include <stdlib.h> // exit()
@@ -8,8 +9,11 @@ void int_binary(const int num) {
     printf("Decimal %12d == Binary ", num);
 
     const size_t bits = sizeof(num) * CHAR_BIT;
+    //CHAR_BIT 문자 유형의 변수에 있는 비트 수
     for (size_t i = 0; i < bits; i++) {
-        const char mask = 1 << (bits - 1 - i);  // 앞에서는 쉬프트 연산자를 배우기 전이라서 pow()함수를 사용했었다. 쉬프트 연산자를 사용하는 게 더 효율적이며 C/C++에 걸맞는 방식이다
+        const char mask = 1 << (bits - 1 - i);  
+        // 앞에서는 쉬프트 연산자를 배우기 전이라서 pow()함수를 사용했었다. 
+        //쉬프트 연산자를 사용하는 게 더 효율적이며 C/C++에 걸맞는 방식이다
 
         if ((num & mask) == mask)
             printf("%d", 1);
