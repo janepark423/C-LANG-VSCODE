@@ -12,7 +12,7 @@ int main()
     //     numVal /= 10;
     // }
  
-    res = (numVal >> 1);
+    res = (numVal >> 1) ;
     printf("%d\r\n",res);
 
     return 0;
