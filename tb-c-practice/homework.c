@@ -1,24 +1,9 @@
 #include <stdio.h>
 
 
-int val= 0b0000000000000000; //16bit
+int val = 0b0000000000000000; // 16bit
+int ips[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
-int IP1 = 1;
-int IP2 = 1;
-int IP3 = 1;
-int IP4 = 1;
-int IP5 = 1;
-int IP6 = 1;
-int IP7 = 1;
-int IP8 = 1;
-int IP9 = 1;
-int IP10 = 1;
-int IP11 = 1;
-int IP12 = 1;
-int IP13 = 1;
-int IP14 = 1;
-int IP15 = 1;
-int IP16 = 1;
 
 
 
@@ -45,40 +30,49 @@ void PrintBits(int a_data)
 void main(void)
 {
     
-        //만약 IP네트 값이 1이면 해당 CN가 연결된 것
-    
-        if (IP1 == 1)
+        //만약 IP네트 값이 0이면 해당 CN가 연결된 것
+        ips[1]=1;
+        ips[3]=1;
+        
+        for(int cnt=0; cnt<16; cnt++){
+           if (ips[cnt] == 0)
+            val = val + (1 << cnt);
+        }
+        /*    
+        if (ips[0] == 1)
             val = val | 0b0000000000000001; // 16진수 : 0x0001
-        if (IP2 == 1)
+        if (ips[1] == 1)
             val = val | 0b0000000000000010; // 16진수 : 0x0002
-        if (IP3 == 1)
+        if (ips[2] == 1)
             val = val | 0b0000000000000100; // 16진수 : 0x0004
-        if (IP4 == 1)
+        if (ips[3] == 1)
             val = val | 0b0000000000001000; // 16진수 : 0x0008
-        if (IP5 == 1)
+        if (ips[4] == 1)
             val = val | 0b0000000000010000; // 16진수 : 0x0010
-        if (IP6 == 1)
+        if (ips[5] == 1)
             val = val | 0b0000000000100000; // 16진수 : 0x0004
-        if (IP7 == 1)
+        if (ips[6] == 1)
             val = val | 0b0000000001000000; // 16진수 : 0x0004
-        if (IP8 == 1)
+        if (ips[7] == 1)
             val = val | 0b0000000010000000; // 16진수 : 0x0004
-        if (IP9 == 1)
+        if (ips[8] == 1)
             val = val | 0b0000000100000000; // 16진수 : 0x0004
-        if (IP10 == 1)
+        if (ips[9] == 1)
             val = val | 0b0000001000000000; // 16진수 : 0x0004
-        if (IP11 == 1)
+        if (ips[10] == 1)
             val = val | 0b0000010000000000; // 16진수 : 0x0004
-        if (IP12 == 1)
+        if (ips[11] == 1)
             val = val | 0b0000100000000000; // 16진수 : 0x0004
-        if (IP13 == 1)
+        if (ips[12] == 1)
             val = val | 0b0001000000000000; // 16진수 : 0x0004
-        if (IP14 == 1)
+        if (ips[13] == 1)
             val = val | 0b0010000000000000; // 16진수 : 0x0004
-        if (IP15 == 1)
+        if (ips[14] == 1)
             val = val | 0b0100000000000000; // 16진수 : 0x0004
-        if (IP16 == 1)
+        if (ips[15] == 1)
             val = val | 0b1000000000000000; // 16진수 : 0x0004
+
+            */
         PrintBits(val);
  
 }
