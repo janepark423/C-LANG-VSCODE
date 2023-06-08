@@ -1,6 +1,10 @@
 #include <stdio.h>
 
+/*
 
+[[[[OUTPUT 코드]]]]
+
+*/
 int val = 0b0000000000000000; // 16bit
 int ips[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
@@ -31,8 +35,7 @@ void main(void)
 {
     
         //만약 IP네트 값이 0이면 해당 CN가 연결된 것
-        ips[1]=1;
-        ips[3]=1;
+
         
         for(int cnt=0; cnt<16; cnt++){
            if (ips[cnt] == 0)

@@ -1,6 +1,10 @@
 #include <stdio.h>
 
+/*
 
+[[[[IF문만을 사용한 INPUT 플로우차트에 관련된 코드]]]]
+
+*/
 int val= 0b0000000000000000; //16bit
 
 int IP1 = 1;
